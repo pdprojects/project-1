@@ -13,7 +13,8 @@ class App extends Component {
 
     this.state = {
       monsters: [],
-      searchField: ''
+      searchField: '',
+      title: ''
     };
   }
   // life cycle method
@@ -25,21 +26,21 @@ class App extends Component {
   // use arrow to bind methods to .this otherwise use bind(this) method.
   // react synthetic event
   onSearchChange = event => {
-    this.setState({ searchField: event.target.value });
+    this.setState({ searchField: event.target.value, title: event.target.value });
   };
 
   render() {
     // state destructuring 
     const { monsters, searchField } = this.state;
-    const filteredMonsters = monsters.filter(monster =>
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
-    );
+    // const filteredMonsters = monsters.filter(monster =>
+    //   monster.name.toLowerCase().includes(searchField.toLowerCase())
+    // );
 
     return (
       <div className='App'>
         <h1>Monsters Rolodex</h1>
         <SearchBox onSearchChange={this.onSearchChange} />
-        <CardList monsters={filteredMonsters} />
+        <CardList monsters={monsters} />
       </div>
     );
   }
