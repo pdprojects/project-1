@@ -20,7 +20,7 @@ class App extends Component {
       .then(response => response.json())
       .then(users => this.setState({ monsters: users }));
   }
-
+  // use arrow to bind methods to .this otherwise use bind(this) method.
   onSearchChange = event => {
     this.setState({ searchField: event.target.value });
   };
