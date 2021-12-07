@@ -23,6 +23,7 @@ class App extends Component {
       .then(users => this.setState({ monsters: users }));
   }
   // use arrow to bind methods to .this otherwise use bind(this) method.
+  // react synthetic event
   onSearchChange = event => {
     this.setState({ searchField: event.target.value });
   };
