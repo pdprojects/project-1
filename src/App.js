@@ -5,6 +5,8 @@ import { SearchBox } from './components/search-box/search-box.component';
 
 import './App.css';
 
+// unlike functional components, class components allow to use state and life cycle methods
+// but they are less readable
 class App extends Component {
   constructor() {
     super();
@@ -14,7 +16,7 @@ class App extends Component {
       searchField: ''
     };
   }
-
+  // life cycle method
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
